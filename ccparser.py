@@ -19,7 +19,7 @@ def parsecard(data):
         try:
             name = raw_name.split("/")[1]
             name += " " + raw_name.split("/")[0]
-        except:
+        except IndexError:
             name = raw_name
         name = " ".join(name.split())
         if re.search(visa, number):
