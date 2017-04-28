@@ -37,9 +37,9 @@ def parsecard(data):
         else:
             type = None
         result = {"number": number, "raw_name": raw_name, "name": name, "exp_month": exp_month,
-                  "exp_year": "20" + exp_year,
-                  "type": type} if type else {"number": number, "raw_name": raw_name, "name": name,
-                                              "exp_month": exp_month, "exp_year": +"20" + exp_year}
+                  "exp_year": "20" + exp_year}
+        if type:
+            result['type'] = type
         return result
     except IndexError:
         return None
